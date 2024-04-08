@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+from .config import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -82,11 +84,11 @@ WSGI_APPLICATION = 'craft_vibe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'crafter_db',
-        'USER': 'crafter_user',
-        'PASSWORD': 'admin@123',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': config.name_db,
+        'USER': config.user_db,
+        'PASSWORD': config.pass_db,
+        'HOST': config.host_db,
+        'PORT': config.port_db,
     }
 }
 
@@ -113,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
 TIME_ZONE = 'UTC'
 
