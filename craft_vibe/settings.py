@@ -9,6 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 environ.Env.read_env()
 
+AUTH_USER_MODEL = 'users.User'
+
 SECRET_KEY = env.str('SECRET_KEY')
 
 DEBUG = env.bool('DEBUG', default=False)
@@ -23,7 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'users.apps.UsersConfig',
     'api.apps.ApiConfig',
+    'organizations.apps.OrganizationsConfig',
 
     'rest_framework',
     'django_filters',
