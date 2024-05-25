@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django_filters',
     'corsheaders',
     'djoser',
+    'phonenumber_field',
     'drf_spectacular',
 ]
 
@@ -150,7 +151,7 @@ SPECTACULAR_SETTINGS = {
     ],
 
     'SERVE_AUTHENTICATION': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.BasicAuthentication',
 
     ],
